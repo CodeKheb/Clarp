@@ -22,11 +22,14 @@ int main(void) {
 void count(int n) {
     for (int i = 0; i <= n; i++){
         if (i != 0) printf("%i\n", i);
-    /* %i = int
-     * %d = double
-     * %f = float
-     * %s = string
-     * %c = char
+    /* %i = int         | 4 bytes
+     * %li = long int   | 8 bytes
+     * %f = float       | 4 bytes
+     * %d = double      | 8 bytes
+     * %c = char        | 1 byte
+     * %s = string      | ? bytes 
+     *
+     * This all might be wrong idk, C is hard okay?
      */
     }
 }

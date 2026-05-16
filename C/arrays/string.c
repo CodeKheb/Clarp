@@ -1,10 +1,12 @@
 #include <stdio.h>
-#include <string.h>
 
 int main(void) {
     char hello[5] = "Hello";
-
-    int length = strlen(hello);
+    
+    int length = 0;
+    while (hello[length] != '\0') {
+        length++;
+    }
 
     // The difference between lowercase and uppercase
     int ascii_difference = 32;
