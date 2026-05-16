@@ -8,7 +8,7 @@ int main(void) {
         length++;
     }
 
-    // The difference between lowercase and uppercase
+    // The difference between lowercase and uppercase in ascii
     int ascii_difference = 32;
 
     // loop to uppercase

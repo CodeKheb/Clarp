@@ -14,7 +14,7 @@ int main(void) {
     // prints length of string
     printf("%i\n", length);
 
-    // "HI!" takes up 4 bytes => H I ! \0
+    // "HI!" takes up 4 bytes => H, I, !, \0
     // \0 is NUL in binary which tells the compiler to stop the string NUL terminated 
 
     for (int i = 0; i < length; i++) {
