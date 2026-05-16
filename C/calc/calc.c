@@ -1,5 +1,6 @@
 // Header
 #include <stdio.h>
+#include <stdlib.h>
 
 // Prototypes
 int addition(int first_input, int second_input);
@@ -30,18 +31,13 @@ int main(void){
 
 char calculate(char operator, int first_input, int second_input) {
     int result;
-    if (operator == '+') {
-        result = addition(first_input, second_input);
+    switch (operator) {
+        case '+': result = addition(first_input, second_input);
+        case '-': result = subtraction(first_input, second_input);
+        case '*': result = multiplication(first_input, second_input);
+        case '/': result = division(first_input, second_input);
+        default: printf("NO");
     }
-    if (operator == '-') {
-        result = subtraction(first_input, second_input);
-    }
-    if (operator == '*') {
-        result = multiplication(first_input, second_input);
-    }
-    if (operator == '/') {
-        result = division(first_input, second_input);
-    } 
 
     return result;
 }
