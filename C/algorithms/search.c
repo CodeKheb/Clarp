@@ -22,7 +22,7 @@ int main(void) {
         }
     }
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < s_length; i++) {
         // strcmp from string.h takes two strings as an argument then compares
         // if it equals to 0, it is the same, otherwise it is not
         if (strcmp(s, strings[i]) == 0) {
