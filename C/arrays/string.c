@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-    char hello[5] = "Hello";
+    char hello[] = "Hello";
     
     int length = 0;
     while (hello[length] != '\0') {

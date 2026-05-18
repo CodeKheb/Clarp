@@ -2,7 +2,7 @@
 
 int main(void) {
     // string is just a character array
-    char string[3] = "HI!";
+    char string[] = "HI!";
 
     // %i to a char prints the ascii value
     printf("%i %i %i\n", string[0], string[1], string[2]);
