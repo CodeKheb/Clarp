@@ -1,47 +1,55 @@
 #include <stdio.h>
 #include <string.h>
 
-// define new data structure
 typedef struct {
     char *name;
-    char *number;
+    char *age;
 } person;
 
+char *remove_new_line(char arr[]);
+
 int main(void) {
-    // initialize amount of people
-    person people[4];
+    int amount = 4;
+    person people[amount];
 
-    // dot operator to access variables
     people[0].name = "Kherbin";
-    people[0].number= "+63-0933";
+    people[0].age= "20";
 
-    people[1].name = "Josh";
-    people[1].number= "+63-0922";
+    people[1].name = "Linus Torvalds";
+    people[1].age= "56";
     
-    people[2].name = "Wren";
-    people[2].number= "+63-0933";
+    people[2].name = "Linus Sebastian";
+    people[2].age= "39";
 
-    people[3].name = "Renzo";
-    people[3].number= "+63-0944";
+    people[3].name = "Gaben";
+    people[3].age= "63";
 
     char name[100];
-    fgets(name, 100, stdin);
+    fgets(name, sizeof(name), stdin);
+
+    remove_new_line(name);
 
 
-    int length = 0;
-    while (name[length] != '\0') {
-        length++;
-        if (name[length] == '\0') {
-            name[length - 1] = '\0';
-        }
-    }
-
-    for (int i = 0; i < 4; i++) {
-        if (strcmp(people[i].name, name) == 0) {
+    for (int i = 0; i < amount; i++) {
+        if (strcmp(name, people[i].name) == 0) {
             printf("Name: %s\n", people[i].name);
-            printf("Number: %s\n", people[i].number);
+            printf("Age: %s\n", people[i].age);
             return 0;
         }
     }
-    printf("Low tier %s, idk you", name);
+
+    printf("Who is %s", name);
+    return 1;
+}
+
+
+char *remove_new_line(char arr[]) {
+    int length = 0;
+    while (arr[length] != '\0') {
+        length++;
+        if (arr[length] == '\n') {
+            arr[length] = '\0';
+        }
+    }
+    return arr;
 }
