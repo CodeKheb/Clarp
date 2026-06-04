@@ -2,8 +2,9 @@
 
 int * bubble(int nums[]);
 
+
 int main(void) {
-    int sort[8] = {7, 3, 5, 1, 0, 4, 2, 6};
+    int sort[8] = {2, 3, 5, 1, 0, 4, 7, 6};
 
 
     printf("Array: ");
