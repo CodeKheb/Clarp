@@ -7,14 +7,21 @@ typedef char * String;
 
 int main(void) {
     String s = "hi!";
-    String t = malloc(strlen(s) + 1);
-
-    for (int i = 0; i <= strlen(s); i++) {
-        t[i] = s[i];
+    if (s == NULL) {
+        return 1;
     }
+
+    String t = malloc(strlen(s) + 1);
+    if (t == NULL) {
+        return 1;
+    }
+
+    // copy s to t
+    strcpy(t, s);
 
     t[0] = toupper(t[0]);
 
     printf("s: %s\n", s);
     printf("s: %s\n", t);
+    free(t);
 }
