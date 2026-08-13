@@ -10,7 +10,10 @@ int main(void) {
 
     node *list = NULL;
 
-    for (int i = 0; i < 3; i++) {
+    int amount = 0;
+    printf("Amount: ");
+    scanf("%i", &amount);
+    for (int i = 0; i < amount; i++) {
         node *n = malloc(sizeof(node));
         if (n == NULL) {
             return 1;
