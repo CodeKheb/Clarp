@@ -7,8 +7,8 @@ typedef struct node {
 } node;
 
 int main(void) {
-
-    node *list = NULL;
+    node *firstnode = NULL;
+    node *lastnode = NULL;
 
     int amount = 0;
     printf("Amount: ");
@@ -22,13 +22,17 @@ int main(void) {
         scanf("%i", &n->number);
         n->next = NULL;
 
-        // Prepend to list 
-        n->next = list;
-        list = n;
+        if (lastnode != NULL) {
+            lastnode->next = n;
+            lastnode = n;
+        } else {
+            firstnode = n;
+            lastnode = n;
+        }
     }
 
     // Print
-    for (node *ptr = list; ptr != NULL; ptr = ptr->next){
+    for (node *ptr = firstnode; ptr != NULL; ptr = ptr->next){
         printf("%i\n", ptr->number);
     }
     
