@@ -27,13 +27,27 @@ int main(void) {
             list = n;
         } 
 
+        // if value is less than the current list
+        else if (n->value < list->value) {
+            n->next = list;
+            list = n;
+        }
+
         // if list has numbers
         else {
             for (node *ptr = list; ptr != NULL; ptr = ptr->next) {
+
                 // if at the end of the list
                 if (ptr->next == NULL) {
                     ptr->next = n;
                     break;
+                }
+
+                if (n->value < ptr->next->value){
+                    n->next = ptr->next;
+                    ptr->next = n;
+                    break;
+
                 }
             }
         }
